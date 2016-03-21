@@ -1,0 +1,33 @@
+table {
+    border: 4px solid #36752D;
+    font: normal 12px/150% Arial, Helvetica, sans-serif; 
+    border-radius: 6px;
+}
+
+thead {  
+    background: linear-gradient(to bottom, #167539 0%,#275420 100%);
+    background-color:#167539;
+    color:#FFFFFF;
+    font-size: 15px; 
+    font-weight: bold; 
+    border-left: 1px solid #36752D;
+}
+
+tbody {
+    color: #275420; 
+    border-left: 1px solid #C6FFC2;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+table tbody .alt td {
+    background: #DFFFDE; 
+    color: #275420; 
+}
+
+table tbody td {
+    color: #275420; 
+    border-left: 1px solid #C6FFC2;
+    font-size: 12px;
+    font-weight: normal;
+}
