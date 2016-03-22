@@ -154,7 +154,10 @@ function appendPC(id, inv, loc, dep, pcname, mb_vendor, mb_name, ven, model, cor
     
     //<editor-fold defaultstate="collapsed" desc="Наполняем строку">
     var cell0 = document.createElement("td");
-    cell0.appendChild(document.createTextNode(inv));
+        var href = document.createElement("a");
+        href.setAttribute("href", "soft.html");
+        href.appendChild(document.createTextNode(inv));
+    cell0.appendChild(href);
     row.appendChild(cell0);
     var cell1 = document.createElement("td");
     cell1.appendChild(document.createTextNode(loc));
