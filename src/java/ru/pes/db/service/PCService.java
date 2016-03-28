@@ -2,7 +2,6 @@ package ru.pes.db.service;
 
 import java.util.List;
 import ru.pes.Objects.PC;
-import ru.pes.db.dao.PCDAO;
 import ru.pes.db.dao.PCDAOImpl;
 
 

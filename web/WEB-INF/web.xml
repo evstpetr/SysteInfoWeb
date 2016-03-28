@@ -4,9 +4,17 @@
         <servlet-name>PCController</servlet-name>
         <servlet-class>ru.pes.controller.PCController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SoftController</servlet-name>
+        <servlet-class>ru.pes.controller.SoftController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PCController</servlet-name>
         <url-pattern>/pc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SoftController</servlet-name>
+        <url-pattern>/sof</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

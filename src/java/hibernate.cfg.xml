@@ -9,5 +9,6 @@
     <property name="hibernate.connection.password">azatIER75</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="ru.pes.Objects.PC"/>
+    <mapping class="ru.pes.Objects.Soft"/>
   </session-factory>
 </hibernate-configuration>

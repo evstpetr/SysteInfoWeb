@@ -36,7 +36,7 @@ public class PCController extends HttpServlet {
         }
     }
 
-    private String getPCS(){
+    private String getPCS() {
         StringBuilder res = new StringBuilder("");
         StringBuilder comps = new StringBuilder("");
         String comp, id, inv, loc, dep, pcName, mb_vendor, mb_name, ven, model, cores, mhz, ipAddr, macAddr, osName, osArch, ram, hdd; 
@@ -70,7 +70,7 @@ public class PCController extends HttpServlet {
     }
     
     //Функция для формирования XML объектов extClosers - объект, str - данные
-    private String getXMLObject(String extClosers, String str){
+    private String getXMLObject(String extClosers, String str) {
         String res;
             res = "<" + extClosers + ">" + str + "</" + extClosers + ">";
         return res;

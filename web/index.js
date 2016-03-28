@@ -4,6 +4,14 @@ var headers;
 var body;
 var flagTD = true;
 
+var mbVendors = new Object();
+    mbVendors.ASUS = "http://www.asus.com";
+    mbVendors.ASUSTek = "http://www.asus.com";
+    mbVendors.Intel = "http://www.intel.ru";
+    mbVendors.MSI = "https://ru.msi.com";
+    mbVendors.GIGABYTE = "http://www.gigabyte.ru";
+    mbVendors.ASROCK = "http://www.asrock.com";
+
 function doRequest() {
     //Создаем таблицу
     createTable();
@@ -38,6 +46,7 @@ function parseXML(responseXML) {
     } else {
         //Если ответ получен формируем массив данных
         var pcs = responseXML.getElementsByTagName("pcs")[0];
+        
         if (pcs.childNodes.length > 0) {
             
             for (var i = 0; i < pcs.childNodes.length; i++) {
@@ -155,7 +164,8 @@ function appendPC(id, inv, loc, dep, pcname, mb_vendor, mb_name, ven, model, cor
     //<editor-fold defaultstate="collapsed" desc="Наполняем строку">
     var cell0 = document.createElement("td");
         var href = document.createElement("a");
-        href.setAttribute("href", "soft.html");
+        href.setAttribute("href", "soft.html?"+id);
+        href.setAttribute("title", "ПО этого ПК");
         href.appendChild(document.createTextNode(inv));
     cell0.appendChild(href);
     row.appendChild(cell0);
@@ -169,7 +179,17 @@ function appendPC(id, inv, loc, dep, pcname, mb_vendor, mb_name, ven, model, cor
     cell3.appendChild(document.createTextNode(pcname));
     row.appendChild(cell3);
     var cell4 = document.createElement("td");
-    cell4.appendChild(document.createTextNode(mb_vendor));
+        var hrefVendor = document.createElement("a");
+        hrefVendor.setAttribute("href", "http://ya.ru");
+        hrefVendor.setAttribute("target", "_blank");
+        for (var prop in mbVendors) {
+            if (mb_vendor.toLowerCase().indexOf(prop.toLowerCase()) > -1) {
+                hrefVendor.setAttribute("href", mbVendors[prop]);
+            }
+        }
+        hrefVendor.setAttribute("title", "Производитель материнской платы");
+        hrefVendor.appendChild(document.createTextNode(mb_vendor));
+    cell4.appendChild(hrefVendor);
     row.appendChild(cell4);
     var cell5 = document.createElement("td");
     cell5.appendChild(document.createTextNode(mb_name));
